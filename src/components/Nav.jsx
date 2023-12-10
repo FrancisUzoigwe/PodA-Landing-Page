@@ -1,36 +1,15 @@
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
 import { hamburger } from "../assets/icons";
 import { headerLogo } from "../assets/images";
 import { navLinks } from "../constants";
 
 const Nav = () => {
   const [toggle, setToggle] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Check if the user has scrolled down more than 100 pixels
-      setIsScrolled(window.scrollY > 100);
-    };
-
-    // Add event listener for scroll
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <header
-      className={`padding-x py-5 absolute z-50 w-full bg-white ${
-        isScrolled ? "sticky top-0 transition-all duration-300 ease-in-out" : ""
-      }`}
+      className={`padding-x py-5 z-50 w-full bg-white sticky top-0 transition-all duration-300 ease-in-out`}
     >
-      {" "}
       <nav className="flex justify-between items-center max-container">
         <a href="/">
           <img

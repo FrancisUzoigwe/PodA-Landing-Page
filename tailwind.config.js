@@ -33,10 +33,6 @@ export default {
         lg: "1024px",  // Large screens (default)
         xl: "1280px",  // Extra-large screens (default)
         wide: "1440px", // Your wide screen configuration (as per your original config)
-
-        'custom-small': "390px", // Custom screen size for small devices (e.g., 390px)
-        'custom-tablet': "768px",
-        'custom-large': "1300px", // Custom screen size for tablets (e.g., 768px)
       },
       backgroundImage: {
         'hero': "url('/src/assets/images/Mostpopular.png')", 

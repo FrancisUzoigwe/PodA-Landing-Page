@@ -19,7 +19,7 @@ const About = () => {
       </div>
 
       <div className="flex flex-1 flex-col">
-        <h1 className="mt-10 font-poppins text-8xl max-sm:text-4xl max-sm:leading-[72px] font-bold">
+        <h1 className="text-[42px] sm:text-4xl md:text-4xl mt-10 font-poppins max-sm:text-4xl max-sm:leading-[72px] font-bold">
           Why are we unique.
         </h1>
         
