@@ -2,9 +2,11 @@ import { useState } from "react";
 import { hamburger } from "../assets/icons";
 import { headerLogo } from "../assets/images";
 import { navLinks } from "../constants";
+import { Modal } from "./";
 
 const Nav = () => {
   const [toggle, setToggle] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <header
@@ -34,14 +36,27 @@ const Nav = () => {
         </ul>
 
         <div className="flex gap-2 text-white text-lg leading-normal font-poppins max-lg:hidden wide:mr-24 bg-black p-3 px-7 rounded hover:bg-secondary transition duration-300 ease-in-out">
-          <button type="button">Join Waitlist</button>
+          <button
+            type="button"
+            onClick={() => {
+              setShowModal(true);
+            }}
+          >
+            Join Waitlist
+          </button>
         </div>
 
         <div className="hidden max-lg:block fixed right-8 gap-2 text-white text-lg leading-normal font-poppins">
           <div className="flex">
             <div className="mr-4 bg-black p-3 px-7 rounded hover:bg-secondary transition duration-300 ease-in-out">
-              <a href="/">Join Waitlist</a>
-            </div>
+            <button
+            type="button"
+            onClick={() => {
+              setShowModal(true);
+            }}
+          >
+            Join Waitlist
+          </button>            </div>
 
             <img
               src={hamburger}
@@ -73,6 +88,7 @@ const Nav = () => {
           </div>
         </div>
       </nav>
+      {showModal && <Modal setOpenModal={setShowModal} />}
     </header>
   );
 };

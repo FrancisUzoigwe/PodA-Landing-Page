@@ -1,7 +1,6 @@
 import heroBanner from './hero-banner.png'
 import heroIcon1 from './hero-icon1.png'
 import heroIcon2 from './hero-icon2.png'
-import equalizador from  './equalizador.png'
 import aboutImage from './aboutImage.png'
 
 import customer1 from './customer1.jpeg'
@@ -24,7 +23,6 @@ export {
     heroBanner,
     heroIcon2,
     heroIcon1,
-    equalizador,
     aboutImage,
 
     customer1,

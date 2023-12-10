@@ -1,9 +1,8 @@
 const Modal = ({ setOpenModal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    // You can access form data using e.target.elements
-    setOpenModal(false); // Close modal after submission
+  
+    setOpenModal(false);
   };
 
   return (
@@ -48,7 +47,7 @@ const Modal = ({ setOpenModal }) => {
                     </label>
                   </div>
                   <div className="mt-6 sm:flex items-center justify-center">
-                    <div className="mt-2 text-white font-poppins bg-black p-3 px-7 rounded hover:bg-secondary transition duration-300 ease-in-out">
+                    <div className="mt-2 text-white font-poppins mr-0 sm:mr-3 bg-black p-3 px-7 rounded hover:bg-secondary transition duration-300 ease-in-out">
                       <button type="submit">Join Waitlist</button>
                     </div>
                     <button
