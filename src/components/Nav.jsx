@@ -10,7 +10,7 @@ const Nav = () => {
 
   return (
     <header
-      className={`padding-x py-5 z-50 w-full bg-white sticky top-0 transition-all duration-300 ease-in-out`}
+      className="padding-x py-5 z-50 w-full bg-white sticky top-0 transition-all duration-300 ease-in-out"
     >
       <nav className="flex justify-between items-center max-container">
         <a href="/">
@@ -35,7 +35,7 @@ const Nav = () => {
           ))}
         </ul>
 
-        <div className="flex gap-2 text-white text-lg leading-normal font-poppins max-lg:hidden wide:mr-24 bg-black p-3 px-7 rounded hover:bg-secondary transition duration-300 ease-in-out">
+        <div className="flex gap-2 text-white text-lg leading-normal font-poppins max-lg:hidden wide:mr-24 bg-primary p-3 px-7 rounded hover:bg-secondary transition duration-300 ease-in-out">
           <button
             type="button"
             onClick={() => {
@@ -46,37 +46,38 @@ const Nav = () => {
           </button>
         </div>
 
-        <div className="hidden max-lg:block fixed right-8 gap-2 text-white text-lg leading-normal font-poppins">
+        <div className="hidden max-lg:block right-8 gap-2 text-white sticky text-lg leading-normal font-poppins">
           <div className="flex">
-            <div className="mr-4 bg-black p-3 px-7 rounded hover:bg-secondary transition duration-300 ease-in-out">
-            <button
-            type="button"
-            onClick={() => {
-              setShowModal(true);
-            }}
-          >
-            Join Waitlist
-          </button>            </div>
+            <div className="mr-4 bg-primary p-2 px-6 sm:p-3 sm:px-7 rounded hover:bg-secondary text-[12px] sm:text-[16px] transition duration-300 ease-in-out">
+              <button
+                type="button"
+                onClick={() => {
+                  setShowModal(true);
+                }}
+              >
+                Join Waitlist
+              </button>
+            </div>
 
             <img
               src={hamburger}
               alt="hamburger"
-              width={27}
-              height={27}
+              width={26}
+              height={26}
               onClick={() => setToggle(!toggle)}
             />
 
             <div
               className={`${
                 !toggle ? "hidden" : "flex"
-              } p-6 bg-bwhite absolute top-10 right-0 mx-4 my-1 min-w-[140px] rounded-xl sidebar bg-white transition-transform transform ease-in-out duration-300`}
+              } p-7 bg-bwhite absolute top-10 right-0 mx-4 my-1 min-w-[160px] rounded-xl sidebar bg-white transition-transform transform ease-in-out duration-300`}
             >
               <ul className="list-none flex justify-end items-start flex-1 flex-col">
                 {navLinks.map((item) => (
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className="font-Poppins leading-normal text-[18px] text-primary hover:text-secondary transition-colors duration-300 ease-in-out"
+                      className="font-Poppins leading-normal text-[17px] text-primary hover:text-secondary transition-colors duration-300 ease-in-out"
                       onClick={() => setToggle(false)} // Close the menu when an item is clicked
                     >
                       {item.label}
