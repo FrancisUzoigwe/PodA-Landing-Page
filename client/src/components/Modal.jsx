@@ -16,7 +16,7 @@ const Modal = ({ setOpenModal }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://poda.vercel.app/send-email", {
+      const response = await fetch("https://pod-a-landing-page-dc5q.vercel.app/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
