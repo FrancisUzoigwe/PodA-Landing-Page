@@ -18,8 +18,8 @@ export default {
         poppins: ["Poppins", "sans-serif"],
       },
       colors: {
-        'primary': "#171717",
-        'secondary': "#FF9A00",
+        primary: "#171717",
+        secondary: "#FF9A00",
         "bg-color": "#F5F6FF",
         "footer-color": "#F5F6FF",
       },
@@ -28,14 +28,14 @@ export default {
       },
 
       screens: {
-        sm: "640px",   // Small devices, such as mobile phones (default)
-        md: "768px",   // Tablets (default)
-        lg: "1024px",  // Large screens (default)
-        xl: "1280px",  // Extra-large screens (default)
+        sm: "640px", // Small devices, such as mobile phones (default)
+        md: "768px", // Tablets (default)
+        lg: "1024px", // Large screens (default)
+        xl: "1280px", // Extra-large screens (default)
         wide: "1440px", // Your wide screen configuration (as per your original config)
       },
       backgroundImage: {
-        'hero': "url('/src/assets/images/Mostpopular.png')", 
+        hero: "url('/src/assets/images/Mostpopular.png')",
       },
     },
   },

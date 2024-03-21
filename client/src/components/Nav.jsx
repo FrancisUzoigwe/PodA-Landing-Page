@@ -9,9 +9,7 @@ const Nav = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <header
-      className="padding-x py-5 z-50 w-full bg-white sticky top-0 transition-all duration-300 ease-in-out"
-    >
+    <header className="padding-x py-5 z-50 w-full bg-white sticky top-0 transition-all duration-300 ease-in-out">
       <nav className="flex justify-between items-center max-container">
         <a href="/">
           <img
@@ -35,15 +33,14 @@ const Nav = () => {
           ))}
         </ul>
 
-        <div className="flex gap-2 text-white text-lg leading-normal font-poppins max-lg:hidden wide:mr-24 bg-primary p-3 px-7 rounded hover:bg-secondary transition duration-300 ease-in-out">
-          <button
-            type="button"
-            onClick={() => {
-              setShowModal(true);
-            }}
-          >
-            Join Waitlist
-          </button>
+        <div
+          className="flex gap-2 text-white text-lg leading-normal font-poppins max-lg:hidden wide:mr-24 bg-primary p-3 px-7 rounded hover:bg-secondary transition duration-300 ease-in-out"
+          type="button"
+          onClick={() => {
+            setShowModal(true);
+          }}
+        >
+          <button>Join Waitlist</button>
         </div>
 
         <div className="hidden max-lg:block right-8 gap-2 text-white sticky text-lg leading-normal font-poppins">
