@@ -1,5 +1,6 @@
-import { useState } from "react";
-// import axios from 'axios';
+import React, { useState } from "react";
+import { registerApi } from "../apis/authApis";
+import { useNavigate } from "react-router-dom";
 
 const Modal = ({ setOpenModal }) => {
   const [formData, setFormData] = useState({
@@ -7,33 +8,29 @@ const Modal = ({ setOpenModal }) => {
     email: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
-  const sendEmail = async (e) => {
+  const onHandleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await fetch("https://pod-a-landing-page-dc5q.vercel.app/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        // Email sent successfully
-        console.log("Your code don work werey!");
-        alert("Email sent successfully!")
-      } else {
-        // Handle the case where the email was not sent successfully
-        console.error("Failed to send email:", await response.text());
+      if (!formData.name || !formData.email) {
+        console.error("Name and email are required");
+        return;
       }
+
+      const res = await registerApi(formData);
+      console.log("This is response: ", res);
+      navigate("/api/send-email");
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Error:", error);
     }
   };
 
@@ -46,7 +43,7 @@ const Modal = ({ setOpenModal }) => {
         ></div>
         <div className="flex items-center justify-center min-h-screen px-4 py-8">
           <div className="relative w-full max-w-lg p-6 mx-auto bg-white rounded-md shadow-lg">
-            <form>
+            <form onSubmit={onHandleSubmit}>
               <div className="mt-3 sm:flex">
                 <div className="text-center sm:text-left w-full">
                   <h4 className="text-lg font-medium text-gray-800">
@@ -86,9 +83,7 @@ const Modal = ({ setOpenModal }) => {
                   </div>
                   <div className="mt-6 sm:flex items-center justify-center">
                     <div className="mt-2 text-white font-poppins mr-0 sm:mr-3 bg-black p-3 px-7 rounded hover:bg-secondary transition duration-300 ease-in-out">
-                      <button type="button" onClick={sendEmail}>
-                        Join Waitlist
-                      </button>
+                      <button type="submit">Join Waitlist</button>
                     </div>
                     <button
                       type="button"
